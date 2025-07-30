@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marvel Universe Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    header a {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    header a:hover {
+      background: #2563eb;
+    }
+
+    .top-buttons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 20;
+    }
+
+    .contact-btn {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 10px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact-btn:hover {
+      background-color: #3b82f6;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .dropdown-content button {
+      color: #333;
+      padding: 10px 16px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      background: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content button:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .features, .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature, .plan {
+      background: #f1f5f9;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .plan {
+      border: 1px solid #e2e8f0;
+    }
+
+    .plan h3 {
+      margin-top: 0;
+    }
+
+    .plan p {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .plan a {
+      display: inline-block;
+      background: #1e3a8a;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #f1f5f9;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-form {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .contact-form-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    .contact-form-content h2 {
+      margin-top: 0;
+      color: #1e3a8a;
+      text-align: center;
+    }
+
+    .contact-form-content input,
+    .contact-form-content textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .contact-form-content button[type="submit"] {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    .contact-form-content button[type="submit"]:hover {
+      background-color: #1e40af;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Right Buttons -->
+  <div class="top-buttons">
+    <button class="contact-btn" onclick="toggleContactForm()">Contact</button>
+    <div class="dropdown">
+      <button class="dropbtn">Intercom</button>
+      <div class="dropdown-content">
+        <button onclick="startIntercomTour()">Product Tour</button>
+        <button>Test 1</button>
+        <button>Test 2</button>
+        <button>Test 3</button>
+        <button>Test 4</button>
+        <button>Test 5</button>
+        <button>Test 6</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <h1>Marvel</h1>
+    <p>Explore the epic universe of heroes, villains, and legendary stories.</p>
+    <a href="#">Enter the Universe</a>
+  </header>
+
+  <section class="section">
+    <h2 style="text-align:center;">Marvel Universe Highlights</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Iconic Heroes</h3>
+        <p>Meet legends like Iron Man, Spider-Man, and Black Panther.</p>
+      </div>
+      <div class="feature">
+        <h3>Multiverse Adventures</h3>
+        <p>From Earth-616 to alternate timelines, the Marvel Multiverse awaits.</p>
+      </div>
+      <div class="feature">
+        <h3>Endless Stories</h3>
+        <p>Enjoy comics, films, and shows across decades of rich storytelling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center;">Subscription Tiers</h2>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Fan</h3>
+        <p>$9/mo</p>
+        <ul style="list-style:none; padding: 0;">
+          <li>✔ Access to Character Bios</li>
+          <li>✔ Comic Archives</li>
+          <li>✔ Digital Wallpapers</li>
+        </ul>
+        <a href="#">Join Now</a>
+      </div>
+      <div class="plan">
+        <h3>Hero</h3>
+        <p>$29/mo</p>
+        <ul style="list-style:none; padding: 0;">
+          <li>✔ Behind-the-Scenes Access</li>
+          <li>✔ Early Comic Releases</li>
+          <li>✔ 4K Video Clips</li>
+        </ul>
+        <a href="#">Join Now</a>
+      </div>
+      <div class="plan">
+        <h3>Legend</h3>
+        <p>$99/mo</p>
+        <ul style="list-style:none; padding: 0;">
+          <li>✔ All-Access Content</li>
+          <li>✔ Collectibles & Merch</li>
+          <li>✔ VIP Marvel Event Invites</li>
+        </ul>
+        <a href="#">Join Now</a>
+      </div>
+    </div>
+
+ </section>
+
+
+  <footer>
+    &copy; 2025 Marvel. All rights reserved.
+  </footer>
+
+  <!-- Contact Form Modal -->
+  <div id="contactForm" class="contact-form">
+    <div class="contact-form-content">
+      <span class="close-btn" onclick="toggleContactForm()">&times;</span>
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/xrblpdod" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Intercom Settings -->
+  <script>
+    window.intercomSettings = {
+      api_base: "https://api-iam.intercom.io",
+      app_id: "vknf0nin",
+    };
+  </script>
+
+  <!-- Intercom Loader -->
+  <script>
+    (function(){
+      var w=window;var ic=w.Intercom;
+      if(typeof ic==="function"){
+        ic('reattach_activator');
+        ic('update',w.intercomSettings);
+      } else {
+        var d=document;
+        var i=function(){ i.c(arguments); };
+        i.q=[]; i.c=function(args){ i.q.push(args); };
+        w.Intercom=i;
+        var l=function(){
+          var s=d.createElement('script');
+          s.type='text/javascript'; s.async=true;
+          s.src='https://widget.intercom.io/widget/vknf0nin';
+          var x=d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s,x);
+        };
+        if(document.readyState==='complete'){ l(); }
+        else if(w.attachEvent){ w.attachEvent('onload',l); }
+        else { w.addEventListener('load',l,false); }
+      }
+    })();
+  </script>
+
+  <script>
+    function startIntercomTour() {
+      if (window.Intercom) {
+        Intercom('startTour', '623550');
+      } else {
+        console.error('Intercom is not loaded yet.');
+      }
+    }
+
+    function toggleContactForm() {
+      const form = document.getElementById('contactForm');
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+<div id="hubspotPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+     background:rgba(0,0,0,0.6); z-index:2000; text-align:center; padding-top:60px;">
+  
+  <div style="background:#fff; display:inline-block; padding:20px; border-radius:10px; 
+              position:relative; max-width:550px; width:90%;">
+    
+    <!-- Close Button -->
+    <span onclick="document.getElementById('hubspotPopup').style.display='none'" 
+          style="position:absolute; top:10px; right:20px; cursor:pointer; font-size:20px;">&times;</span>
+    
+    <!-- HubSpot CTA Embed -->
+    <div class="hs-cta-embed hs-cta-embed-193557951096" 
+         style="max-width:100%; max-height:100%; width:502px; height:454.22px" 
+         data-hubspot-wrapper-cta-id="193557951096">
+      
+      <link rel="stylesheet" href="https://js.hscta.com/embeddable_cta_placeholder_v1.css">
+      
+      <div class="hs-cta-loading-dot__container">
+        <div class="hs-cta-loading-dot"></div>
+        <div class="hs-cta-loading-dot"></div>
+        <div class="hs-cta-loading-dot"></div>
+      </div>
+      
+      <div class="hs-cta-embed__skeleton"></div>
+      
+      <picture>
+        <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                media="(max-width: 480px)" />
+        <img alt="Heading Add text here." loading="lazy" 
+             src="https://no-cache.hubspot.com/cta/default/46407772/interactive-193557951096.png" 
+             style="height: 100%; width: 100%; object-fit: fill" 
+             onerror="this.style.display='none'" />
+      </picture>
+    </div>
+  </div>
+</div>
+
+<!-- HubSpot Tracking Script -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46407772.js"></script>
+
+<script>
+  // Function to open the HubSpot popup
+  function openHubspotPopup() {
+    document.getElementById('hubspotPopup').style.display = 'block';
+  }
+</script>
+
+</body>
+
+
+<script>
+  window.onload = function() {
+    setTimeout(openHubspotPopup, 2000); // shows after 2 seconds
+  };
+</script>
+</html>
