@@ -44,6 +44,29 @@
       background: #2563eb;
     }
 
+    /* About button top left */
+    .top-left {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 20;
+    }
+
+    .about-btn {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .about-btn:hover {
+      background-color: #1e40af;
+    }
+
     .top-buttons {
       position: absolute;
       top: 1rem;
@@ -187,8 +210,7 @@
       text-align: center;
     }
 
-    .contact-form-content input,
-    .contact-form-content textarea {
+    .contact-form-content input, .contact-form-content textarea {
       width: 100%;
       padding: 0.75rem;
       margin: 0.5rem 0;
@@ -218,11 +240,51 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+
+    /* Popup overlay */
+    #ctaModalOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Popup content */
+    #ctaModal {
+      background: #fff;
+      border-radius: 10px;
+      padding: 0;
+      max-width: 502px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    /* Close button */
+    #ctaModalClose {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-
   <header>
+    <!-- About Button on Top Left -->
+    <div class="top-left">
+      <a href="https://46407772.hs-sites.com/marvel/about-marvel" class="about-btn">About</a>
+    </div>
+
+    <!-- Header Content -->
     <h1>Marvel</h1>
     <p>Explore the epic universe of heroes, villains, and legendary stories.</p>
     <a href="#">Enter the Universe</a>
@@ -280,9 +342,7 @@
         <a href="#">Join Now</a>
       </div>
     </div>
-
- </section>
-
+  </section>
 
   <footer>
     &copy; 2025 Marvel. All rights reserved.
@@ -318,16 +378,13 @@
         ic('reattach_activator');
         ic('update',w.intercomSettings);
       } else {
-        var d=document;
-        var i=function(){ i.c(arguments); };
-        i.q=[]; i.c=function(args){ i.q.push(args); };
+        var d=document;var i=function(){ i.c(arguments); };
+        i.q=[];i.c=function(args){ i.q.push(args); };
         w.Intercom=i;
         var l=function(){
-          var s=d.createElement('script');
-          s.type='text/javascript'; s.async=true;
+          var s=d.createElement('script');s.type='text/javascript';s.async=true;
           s.src='https://widget.intercom.io/widget/vknf0nin';
-          var x=d.getElementsByTagName('script')[0];
-          x.parentNode.insertBefore(s,x);
+          var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
         };
         if(document.readyState==='complete'){ l(); }
         else if(w.attachEvent){ w.attachEvent('onload',l); }
@@ -344,126 +401,43 @@
         console.error('Intercom is not loaded yet.');
       }
     }
-
     function toggleContactForm() {
       const form = document.getElementById('contactForm');
       form.style.display = form.style.display === 'block' ? 'none' : 'block';
     }
   </script>
-<style>
-  /* Popup overlay */
-  #ctaModalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
 
-  /* Popup content */
-  #ctaModal {
-    background: #fff;
-    border-radius: 10px;
-    padding: 0;
-    max-width: 502px;
-    width: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    position: relative;
-  }
-
-  /* Close button */
-  #ctaModalClose {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #888;
-  }
-</style>
-<!-- Start of knowledge based -->
-  <style>
-  .top-left {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 20;
-  }
-
-  .about-btn {
-    background-color: #2563eb;
-    color: white;
-    padding: 10px 16px;
-    font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .about-btn:hover {
-    background-color: #1e40af;
-  }
-</style>
-
-<header>
-  <!-- About Button on Left -->
-  <div class="top-left">
-    <a href="https://46407772.hs-sites.com/marvel/about-marvel" class="about-btn">About</a>
+  <!-- Popup container -->
+  <div id="ctaModalOverlay">
+    <div id="ctaModal">
+      <span id="ctaModalClose">&times;</span>
+      <!-- HubSpot CTA -->
+      <div class="hs-cta-embed hs-cta-embed-193557951096" style="max-width:100%; max-height:100%; width:502px;height:474.2124938964844px" data-hubspot-wrapper-cta-id="193557951096">
+        <link rel="stylesheet" href="https://js.hscta.com/embeddable_cta_placeholder_v1.css">
+        <div class="hs-cta-loading-dot__container">
+          <div class="hs-cta-loading-dot"></div>
+          <div class="hs-cta-loading-dot"></div>
+          <div class="hs-cta-loading-dot"></div>
+        </div>
+        <div class="hs-cta-embed__skeleton"></div>
+        <picture>
+          <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" media="(max-width: 480px)" />
+          <img alt="Heading Add text here." loading="lazy" src="https://no-cache.hubspot.com/cta/default/46407772/interactive-193557951096.png" style="height: 100%; width: 100%; object-fit: fill" onerror="this.style.display='none'" />
+        </picture>
+      </div>
+      <script charset="utf-8" type="text/javascript" src="//js.hscta.net/cta/current.js"></script>
+      <script>
+        // Close the popup
+        document.getElementById("ctaModalClose").onclick = function () {
+          document.getElementById("ctaModalOverlay").style.display = "none";
+        };
+      </script>
+    </div>
   </div>
 
-  <!-- Existing Header Content -->
-  <h1>Marvel</h1>
-  <p>Explore the epic universe of heroes, villains, and legendary stories.</p>
-  <a href="#">Enter the Universe</a>
-</header>
-<!-- End ofknowlede base  -->
-<!-- Popup container -->
-<div id="ctaModalOverlay">
-  <div id="ctaModal">
-    <span id="ctaModalClose">&times;</span>
+  <!-- Start of HubSpot Embed Code -->
+  <!--<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46407772.js"></script>-->
+  <!-- End of HubSpot Embed Code -->
 
-    <!-- HubSpot CTA -->
-
-  <div class="hs-cta-embed hs-cta-embed-193557951096" style="max-width:100%; max-height:100%; width:502px;height:474.2124938964844px" data-hubspot-wrapper-cta-id="193557951096">
-  <link rel="stylesheet" href="https://js.hscta.com/embeddable_cta_placeholder_v1.css">
-  <div class="hs-cta-loading-dot__container">
-     <div class="hs-cta-loading-dot"></div>
-     <div class="hs-cta-loading-dot"></div>
-     <div class="hs-cta-loading-dot"></div>
-  </div>
-  <div class="hs-cta-embed__skeleton"></div>
-  <picture>
-    <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" media="(max-width: 480px)" />
-    <img alt="Heading Add text here." loading="lazy" src="https://no-cache.hubspot.com/cta/default/46407772/interactive-193557951096.png" style="height: 100%; width: 100%; object-fit: fill" onerror="this.style.display='none'" />
-  </picture>
-</div>
-
-<script charset="utf-8" type="text/javascript" src="//js.hscta.net/cta/current.js"></script>
-
-<script>
-  // Close the popup
-  document.getElementById("ctaModalClose").onclick = function () {
-    document.getElementById("ctaModalOverlay").style.display = "none";
-  };
-
-  // Optional: Auto-close after X seconds
-  // setTimeout(() => {
-  //   document.getElementById("ctaModalOverlay").style.display = "none";
-  // }, 10000); // 10 seconds
-</script>
-<!-- Start of HubSpot Embed Code -->
-//<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46407772.js"></script>//
-<!-- End of HubSpot Embed Code -->
 </body>
 </html>
-
-
-
-
-
