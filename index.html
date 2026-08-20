@@ -163,7 +163,6 @@
       padding: 4rem 2rem;
       max-width: 1400px;
       margin: 0 auto;
-      scroll-margin-top: 24px;
     }
 
     .hubspot-form-section h2 {
@@ -187,6 +186,14 @@
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
 
+    /*
+      This controls where the page stops
+      when Contact Us is clicked.
+    */
+    #contact-form {
+      scroll-margin-top: 25px;
+    }
+
     /* =========================
        FOOTER
     ========================= */
@@ -203,7 +210,6 @@
     ========================= */
 
     @media (max-width: 700px) {
-
       header {
         padding-top: 6rem;
       }
@@ -235,7 +241,6 @@
   </style>
 </head>
 
-
 <body>
 
   <!-- =========================================
@@ -258,7 +263,7 @@
 
 
     <!-- CONTACT US BUTTON -->
-    <!-- Clicking this smoothly scrolls to the HubSpot form -->
+    <!-- Smooth scrolls directly to the HubSpot form -->
 
     <div class="top-buttons">
 
@@ -478,10 +483,7 @@
        HUBSPOT CONTACT FORM
   ========================================== -->
 
-  <section
-    id="contact-form"
-    class="hubspot-form-section"
-  >
+  <section class="hubspot-form-section">
 
     <h2>
       Contact Us
@@ -492,7 +494,16 @@
     </p>
 
 
-    <div class="hubspot-form-card">
+    <!--
+      ID IS HERE NOW.
+      Clicking Contact Us will scroll directly
+      to the actual HubSpot form container.
+    -->
+
+    <div
+      id="contact-form"
+      class="hubspot-form-card"
+    >
 
       <!-- HUBSPOT FORM EMBED SCRIPT -->
 
@@ -686,7 +697,6 @@
     src="//js.hs-scripts.com/46407772.js"
   >
   </script>
-
 
 </body>
 </html>
