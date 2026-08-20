@@ -49,7 +49,10 @@
       background: #2563eb;
     }
 
-    /* About button top left */
+    /* =========================
+       ABOUT BUTTON
+    ========================= */
+
     .top-left {
       position: absolute;
       top: 1rem;
@@ -72,7 +75,10 @@
       background-color: #1e40af;
     }
 
-    /* Contact Us button top right */
+    /* =========================
+       CONTACT US BUTTON
+    ========================= */
+
     .top-buttons {
       position: absolute;
       top: 1rem;
@@ -84,7 +90,7 @@
 
     .top-buttons .contact-btn {
       display: inline-block;
-      background-color: #1e3a8a;
+      background-color: #2563eb;
       color: white;
       padding: 10px 16px;
       font-size: 14px;
@@ -95,8 +101,12 @@
     }
 
     .top-buttons .contact-btn:hover {
-      background-color: #3b82f6;
+      background-color: #1e40af;
     }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     .section {
       padding: 4rem 2rem;
@@ -141,14 +151,14 @@
       text-decoration: none;
     }
 
-    footer {
-      background: #f1f5f9;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
+    .plan a:hover {
+      background: #2563eb;
     }
 
-    /* HUBSPOT CONTACT FORM */
+    /* =========================
+       HUBSPOT CONTACT FORM
+    ========================= */
+
     .hubspot-form-section {
       padding: 4rem 2rem;
       max-width: 1400px;
@@ -177,7 +187,27 @@
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #f1f5f9;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 700px) {
+
+      header {
+        padding-top: 6rem;
+      }
+
       .hubspot-form-section {
         padding: 3rem 1rem;
       }
@@ -185,33 +215,66 @@
       .hubspot-form-card {
         padding: 1rem;
       }
+
+      .top-left {
+        left: 0.75rem;
+        top: 0.75rem;
+      }
+
+      .top-buttons {
+        right: 0.75rem;
+        top: 0.75rem;
+      }
+
+      .about-btn,
+      .top-buttons .contact-btn {
+        font-size: 13px;
+        padding: 9px 13px;
+      }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
   <header>
 
-    <!-- About Button -->
+    <!-- ABOUT BUTTON -->
     <div class="top-left">
+
       <a
         href="https://46407772.hs-sites.com/marvel/about-marvel"
         class="about-btn"
       >
         About
       </a>
+
     </div>
 
-    <!-- Contact Us Button -->
+
+    <!-- CONTACT US BUTTON -->
+    <!-- Clicking this smoothly scrolls to the HubSpot form -->
+
     <div class="top-buttons">
-      <a href="#contact-form" class="contact-btn">
+
+      <a
+        href="#contact-form"
+        class="contact-btn"
+      >
         Contact Us
       </a>
+
     </div>
 
-    <h1>Marvel</h1>
+
+    <h1>
+      Marvel
+    </h1>
 
     <p>
       Explore the epic universe of heroes, villains, and legendary stories.
@@ -224,36 +287,63 @@
   </header>
 
 
-  <!-- FEATURES -->
+  <!-- =========================================
+       FEATURES
+  ========================================== -->
+
   <section class="section">
 
     <h2 style="text-align:center;">
       Marvel Universe Highlights
     </h2>
 
+
     <div class="features">
 
+      <!-- FEATURE 1 -->
+
       <div class="feature">
-        <h3>Iconic Heroes</h3>
+
+        <h3>
+          Iconic Heroes
+        </h3>
+
         <p>
           Meet legends like Iron Man, Spider-Man, and Black Panther.
         </p>
+
       </div>
 
+
+      <!-- FEATURE 2 -->
+
       <div class="feature">
-        <h3>Multiverse Adventures</h3>
+
+        <h3>
+          Multiverse Adventures
+        </h3>
+
         <p>
           From Earth-616 to alternate timelines,
           the Marvel Multiverse awaits.
         </p>
+
       </div>
 
+
+      <!-- FEATURE 3 -->
+
       <div class="feature">
-        <h3>Endless Stories</h3>
+
+        <h3>
+          Endless Stories
+        </h3>
+
         <p>
           Enjoy comics, films, and shows across decades
           of rich storytelling.
         </p>
+
       </div>
 
     </div>
@@ -261,60 +351,122 @@
   </section>
 
 
-  <!-- PRICING -->
+  <!-- =========================================
+       PRICING
+  ========================================== -->
+
   <section class="section">
 
     <h2 style="text-align:center;">
       Subscription Tiers
     </h2>
 
+
     <div class="pricing">
 
+
+      <!-- FAN PLAN -->
+
       <div class="plan">
-        <h3>Fan</h3>
-        <p>$9/mo</p>
+
+        <h3>
+          Fan
+        </h3>
+
+        <p>
+          $9/mo
+        </p>
 
         <ul style="list-style:none; padding:0;">
-          <li>✔ Access to Character Bios</li>
-          <li>✔ Comic Archives</li>
-          <li>✔ Digital Wallpapers</li>
+
+          <li>
+            ✔ Access to Character Bios
+          </li>
+
+          <li>
+            ✔ Comic Archives
+          </li>
+
+          <li>
+            ✔ Digital Wallpapers
+          </li>
+
         </ul>
 
         <a href="#">
           Join Now
         </a>
+
       </div>
 
 
+      <!-- HERO PLAN -->
+
       <div class="plan">
-        <h3>Hero</h3>
-        <p>$29/mo</p>
+
+        <h3>
+          Hero
+        </h3>
+
+        <p>
+          $29/mo
+        </p>
 
         <ul style="list-style:none; padding:0;">
-          <li>✔ Behind-the-Scenes Access</li>
-          <li>✔ Early Comic Releases</li>
-          <li>✔ 4K Video Clips</li>
+
+          <li>
+            ✔ Behind-the-Scenes Access
+          </li>
+
+          <li>
+            ✔ Early Comic Releases
+          </li>
+
+          <li>
+            ✔ 4K Video Clips
+          </li>
+
         </ul>
 
         <a href="#">
           Join Now
         </a>
+
       </div>
 
 
+      <!-- LEGEND PLAN -->
+
       <div class="plan">
-        <h3>Legend</h3>
-        <p>$99/mo</p>
+
+        <h3>
+          Legend
+        </h3>
+
+        <p>
+          $99/mo
+        </p>
 
         <ul style="list-style:none; padding:0;">
-          <li>✔ All-Access Content</li>
-          <li>✔ Collectibles & Merch</li>
-          <li>✔ VIP Marvel Event Invites</li>
+
+          <li>
+            ✔ All-Access Content
+          </li>
+
+          <li>
+            ✔ Collectibles & Merch
+          </li>
+
+          <li>
+            ✔ VIP Marvel Event Invites
+          </li>
+
         </ul>
 
         <a href="#">
           Join Now
         </a>
+
       </div>
 
     </div>
@@ -322,7 +474,10 @@
   </section>
 
 
-  <!-- HUBSPOT CONTACT FORM -->
+  <!-- =========================================
+       HUBSPOT CONTACT FORM
+  ========================================== -->
+
   <section
     id="contact-form"
     class="hubspot-form-section"
@@ -336,18 +491,25 @@
       Complete the form below and our team will get back to you.
     </p>
 
+
     <div class="hubspot-form-card">
+
+      <!-- HUBSPOT FORM EMBED SCRIPT -->
 
       <script
         src="https://js.hsforms.net/forms/embed/46407772.js"
         defer>
       </script>
 
+
+      <!-- HUBSPOT FORM -->
+
       <div
         class="hs-form-frame"
         data-region="na1"
         data-form-id="832d5c27-b7a5-485a-b5f8-3ec0fbcbd9b8"
-        data-portal-id="46407772">
+        data-portal-id="46407772"
+      >
       </div>
 
     </div>
@@ -355,74 +517,140 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
   <footer>
+
     &copy; 2025 Marvel. All rights reserved.
+
   </footer>
 
 
-  <!-- INTERCOM SETTINGS -->
+  <!-- =========================================
+       INTERCOM SETTINGS
+  ========================================== -->
+
   <script>
+
     window.intercomSettings = {
-      api_base: "https://api-iam.intercom.io",
-      app_id: "lu3dtr42"
+
+      api_base:
+        "https://api-iam.intercom.io",
+
+      app_id:
+        "lu3dtr42"
+
     };
+
   </script>
 
 
-  <!-- INTERCOM LOADER -->
+  <!-- =========================================
+       INTERCOM LOADER
+  ========================================== -->
+
   <script>
+
     (function() {
 
       var w = window;
+
       var ic = w.Intercom;
 
-      if (typeof ic === "function") {
 
-        ic("reattach_activator");
-        ic("update", w.intercomSettings);
+      if (
+        typeof ic === "function"
+      ) {
+
+        ic(
+          "reattach_activator"
+        );
+
+        ic(
+          "update",
+          w.intercomSettings
+        );
 
       } else {
 
-        var d = document;
+        var d =
+          document;
 
-        var i = function() {
-          i.c(arguments);
-        };
+
+        var i =
+          function() {
+
+            i.c(
+              arguments
+            );
+
+          };
+
 
         i.q = [];
 
-        i.c = function(args) {
-          i.q.push(args);
-        };
 
-        w.Intercom = i;
+        i.c =
+          function(args) {
 
-        var l = function() {
+            i.q.push(
+              args
+            );
 
-          var s = d.createElement("script");
+          };
 
-          s.type = "text/javascript";
-          s.async = true;
 
-          s.src =
-            "https://widget.intercom.io/widget/vknf0nin";
+        w.Intercom =
+          i;
 
-          var x =
-            d.getElementsByTagName("script")[0];
 
-          x.parentNode.insertBefore(
-            s,
-            x
-          );
+        var l =
+          function() {
 
-        };
+            var s =
+              d.createElement(
+                "script"
+              );
 
-        if (document.readyState === "complete") {
+
+            s.type =
+              "text/javascript";
+
+
+            s.async =
+              true;
+
+
+            s.src =
+              "https://widget.intercom.io/widget/vknf0nin";
+
+
+            var x =
+              d.getElementsByTagName(
+                "script"
+              )[0];
+
+
+            x.parentNode.insertBefore(
+              s,
+              x
+            );
+
+          };
+
+
+        if (
+          document.readyState ===
+          "complete"
+        ) {
 
           l();
 
-        } else if (w.attachEvent) {
+        } else if (
+          w.attachEvent
+        ) {
 
           w.attachEvent(
             "onload",
@@ -442,17 +670,23 @@
       }
 
     })();
+
   </script>
 
 
-  <!-- HUBSPOT TRACKING -->
+  <!-- =========================================
+       HUBSPOT TRACKING
+  ========================================== -->
+
   <script
     type="text/javascript"
     id="hs-script-loader"
     async
     defer
-    src="//js.hs-scripts.com/46407772.js">
+    src="//js.hs-scripts.com/46407772.js"
+  >
   </script>
+
 
 </body>
 </html>
